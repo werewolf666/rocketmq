@@ -1,11 +1,11 @@
 <?php
-require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/../../vendor/autoload.php');
 
 //这是服务器地址监听的端口，可以配置多个，每个配置启动一个进程处理消息
 $config = [
     [
-        'host'=>'192.168.11.202',
-        'port'=>'9090'
+        'host'=>'121.199.30.160',
+        'port'=>'50047'
     ]
 ];
 $client = new \RocketMqClient\RocketMqClient($config);
