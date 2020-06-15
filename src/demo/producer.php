@@ -11,10 +11,10 @@ $config = [
 $client = new \RocketMqClient\RocketMqClient($config);
 
 try {
-    $res = $client->sendMsg('test_topic','TagA','this is test msg');
+    $res = $client->sendMsg('public','TagA','this is test msg');
     //简单的测试是否连通
     var_dump($res);
     echo PHP_EOL;
 }  catch (\Exception $e) {
-    echo $e->getMessage();
+    print_r($e);
 }
