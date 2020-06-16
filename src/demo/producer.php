@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD:src/demo/client.php
 
 /**
  * 
@@ -68,3 +69,24 @@ class SocketClient
 $conf = ['host'=>'127.0.0.1','port'=>9876];
 $server = new SocketClient($conf);
 $server->connect();
+=======
+require(__DIR__ . '/../../vendor/autoload.php');
+
+//这是服务器地址监听的端口，可以配置多个，每个配置启动一个进程处理消息
+$config = [
+    [
+        'host'=>'121.199.30.160',
+        'port'=>'50047'
+    ]
+];
+$client = new \RocketMqClient\RocketMqClient($config);
+
+try {
+    $res = $client->sendMsg('public','TagA','this is test msg');
+    //简单的测试是否连通
+    var_dump($res);
+    echo PHP_EOL;
+}  catch (\Exception $e) {
+    print_r($e);
+}
+>>>>>>> d196bcca9acf2dc4cbb1e1a9f1cbdbf17d77510d:src/demo/producer.php
